@@ -1,4 +1,8 @@
 
-<!--<app-login></app-login>-->
-<app-nav-bar></app-nav-bar>
+<!--
+<app-login></app-login>
+-->
+<div *ngIf="!(router.url.indexOf('sign_in')>-1) && !(router.url.indexOf('sign_up')>-1)">
+  <app-nav-bar></app-nav-bar>
+</div>
 <router-outlet></router-outlet>

@@ -1,1 +1,70 @@
-<p>sign-up works!</p>
+<div style="height: 100vh">
+  <a routerLink="/home" class="text-decoration-none text-dark">
+  <h1 class="pt-5 text-center font-weight-bolder font-italic"><img class="iconstyle" src="./assets/image/Capture.PNG">G-STORE</h1>
+  </a>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signup my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <form class="form-signup">
+              <div class="form-label-group">
+                <label for="inputPassword"><b>Username-:</b></label>
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputEmail"><b>Email address-:</b></label>
+                <input type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputPassword"><b>Phone Number-:</b></label>
+                <input type="Tel" id="inputPhonenumber" class="form-control" placeholder="Password" required>
+              </div>
+
+              <label><b>Gender-:</b></label>
+              <div class="custom-control custom-radio mb-3 ">
+
+                <div>
+                <input type="radio" class="custom-control-input" id="customradio1" name="gender">
+                <label class="custom-control-label" for="customradio1">Male</label>
+                </div>
+                <div>
+                <input type="radio" class="custom-control-input" id="customradio2" name="gender">
+                <label class="custom-control-label" for="customradio2">Female</label>
+                </div>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputPassword"><b>Password-:</b></label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              </div>
+
+              <div class="form-label-group">
+                <label for="inputPassword"><b>Confirm Password-:</b></label>
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+              </div>
+
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+            </form>
+            <div class="text-center">
+              Already have an Account?
+            </div>
+            <div class="text-center">
+             <a routerLink="/sign_in" class="font-weight-bold">
+               <button class="btn-primary subtn">Login</button>
+             </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

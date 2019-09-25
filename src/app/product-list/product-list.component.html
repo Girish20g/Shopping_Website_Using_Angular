@@ -1,1 +1,8 @@
-<p>product-list works!</p>
+<div class = "row">
+  <div class = "col-3 pro-style" *ngFor="let p of products">
+    <img src="{{p.imgsrc}}" height="300px">
+    <div><b>{{p.brand}}</b></div>
+    <div>"{{p.name}}"</div>
+    <div>Price-:<b>{{p.price}}</b></div>
+  </div>
+</div>

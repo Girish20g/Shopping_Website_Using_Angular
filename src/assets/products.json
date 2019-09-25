@@ -1,0 +1,63 @@
+[
+  {
+    "brand": "ADIDAS",
+    "name" : "Men ERDIGA 4.0 Shoes",
+    "imgsrc": "./assets/image/shoe1.PNG",
+    "price": "Rs. 1899"
+  },
+  {
+    "brand": "WROGN",
+    "name" : "Men Solid SweatShirt",
+    "imgsrc": "./assets/image/fashion1.PNG",
+    "price": "Rs. 1599"
+  },
+  {
+    "brand": "PUMA",
+    "name" : "Energy Windbreaker Jacket",
+    "imgsrc": "./assets/image/fashion2.PNG",
+    "price": "Rs. 2324"
+  },
+  {
+    "brand": "JOSEPH MURPHY",
+    "name" : "The Power Of Your Subconscious Mind",
+    "imgsrc": "./assets/image/book1.PNG",
+    "price": "Rs. 120"
+  },
+  {
+    "brand": "SONY",
+    "name" : "Sony SRS-XB Extra Bass Speaker",
+    "imgsrc": "./assets/image/electronic1.PNG",
+    "price": "Rs. 599"
+  },
+  {
+    "brand": "KOOKABURA",
+    "name" : "Kookabura Minace-400 Cricket Bat",
+    "imgsrc": "./assets/image/sports1.PNG",
+    "price": "Rs. 599"
+  },
+  {
+    "brand": "PUMA",
+    "name" : "Mens Puma-522 Sneakers",
+    "imgsrc": "./assets/image/sports2.PNG",
+    "price": "Rs. 2200"
+  },
+  {
+    "brand": "CALVIN KLEIN",
+    "name" : "men Tappered fit Jeans",
+    "imgsrc": "./assets/image/fashion3.PNG",
+    "price": "Rs. 12000"
+  },
+  {
+    "brand": "B&O",
+    "name" : "B&O Play 162488 H8 Wireless",
+    "imgsrc": "./assets/image/electronic2.PNG",
+    "price": "Rs. 5000"
+  },
+  {
+    "brand": "NOKIA",
+    "name" : "NOkia TA-1174 Blue",
+    "imgsrc": "./assets/image/electronic3.PNG",
+    "price": "Rs. 1100"
+  }
+
+]
