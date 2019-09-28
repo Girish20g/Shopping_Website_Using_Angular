@@ -1,8 +1,11 @@
 <div class = "row">
-  <div class = "col-3 pro-style" *ngFor="let p of products">
-    <img src="{{p.imgsrc}}" height="300px">
+  <div class = "col-3" *ngFor="let p of products">
+    <div class= "pro-style rounded-lg pl-2 pt-1 pb-1"(click)="onShow(p)">
+    <img src="{{p.imgsrc}}" height="300px" class="mt-2">
     <div><b>{{p.brand}}</b></div>
     <div>"{{p.name}}"</div>
     <div>Price-:<b>{{p.price}}</b></div>
+      <div align="center"><button class=" btn btn-dark rounded-lg">View</button> </div>
+    </div>
   </div>
 </div>

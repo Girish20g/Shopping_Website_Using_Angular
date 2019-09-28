@@ -1,6 +1,11 @@
 <div >
   <nav class="navbar navbar-expand-sm fixed-top justify-content-between">
-    <a class="navbar-brand"><img src="./assets/image/Capture.PNG" class="iconstyle"><span style="vertical-align: top"><b>G-STORE</b></span></a>
+    <a class="navbar-brand">
+      <ng-marquee>
+        <img src="./assets/image/Capture.PNG" class="iconstyle">
+        <span style="vertical-align: top"><b>G-STORE</b></span>
+      </ng-marquee>
+    </a>
     <div class="search-container d-flex">
       <b>Search</b><i class = "material-icons" style="font-size: 2rem">search</i>
       <input class="form-control p-0 m-0" type="search" placeholder="Search for products,brand or more">
@@ -14,7 +19,7 @@
           <div class="d-flex"><div></div><a class="nav-link text-white" routerLink="/sign_in"><i class="material-icons">person</i><span style="vertical-align: top">SignIn</span></a></div>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#"><i class="material-icons">shopping_cart</i><span style="vertical-align: top">My Cart</span></a>
+          <a class="nav-link text-white" routerLink="/cart"><i class="material-icons">shopping_cart</i><span style="vertical-align: top">My Cart</span></a>
         </li>
       </ul>
     </div>
