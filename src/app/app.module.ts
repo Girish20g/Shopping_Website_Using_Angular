@@ -14,6 +14,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {NgMarqueeModule} from 'ng-marquee-improved';
 import {ProductService} from './product-list/product.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ProductDetailsService} from './product-details/product-details.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgMarqueeModule,
     NgbModule
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    ProductDetailsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
