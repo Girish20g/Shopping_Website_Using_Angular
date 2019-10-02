@@ -68,6 +68,13 @@
     "name" : "NOkia TA-1174 Blue",
     "imgsrc": "./assets/image/electronic3.PNG",
     "price": "Rs. 1100"
+  },
+  {
+    "id": "11",
+    "brand": "APPLE",
+    "name" : "Apple iPhone 11 Pro Max",
+    "imgsrc": "./assets/image/electronic5.PNG",
+    "price": "Rs. 98000"
   }
 
 ]
