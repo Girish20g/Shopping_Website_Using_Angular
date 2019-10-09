@@ -7,7 +7,7 @@ import {ProductDetailsComponent} from './product-details/product-details.compone
 
 export const MAIN_ROUTES: Routes = [
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: '', redirectTo: '/sign_in', pathMatch: 'full'
   },
   {
   path: 'home',

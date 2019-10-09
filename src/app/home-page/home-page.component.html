@@ -1,4 +1,15 @@
 <div class="bg-dark">
+  <div class="container">
+    <div class = "row">
+      <div class = "col-2dot4" (click)="ngOnInit()"><a class="nav-link text-white"><h6>HOME</h6></a></div>
+      <div class = "col-sm-2dot4" (click)="getWithCategory('Electronics')"><a class="nav-link text-white" ><h6>ELECTRONICS</h6></a></div>
+      <div class = "col-md-2dot4" (click)="getWithCategory('Books')"><a class="nav-link text-white" ><h6>BOOKS</h6></a></div>
+      <div class = "col-lg-2dot4" (click)="getWithCategory('Sports')"><a class="nav-link text-white"><h6>SPORTS</h6></a></div>
+      <div class = "col-xl-2dot4" (click)="getWithCategory('Fashion')"><a class="nav-link text-white" ><h6>FASHION</h6></a></div>
+    </div>
+  </div>
+</div>
+<div class="bg-dark">
   <ngb-carousel  class="mt-1 mb-2">
     <ng-template ngbSlide >
       <img src="./assets/image/carousel1.PNG" height="450px" class="w-100" alt="Random first slide">
@@ -12,20 +23,47 @@
   </ngb-carousel>
 </div>
 <div class = "row mx-0">
-  <div class = "col-2 bg-transparent price-filter mt-1">
+  <div class = "col-2 bg-light price-filter mt-1">
     <span>PRICE</span>
-    <ul>
-      <li><input type = "checkbox" value = "1 to 500">
-      Rs 1 - Rs 500</li>
-      <li><input type = "checkbox" value = "501 to 1500">
+    <ul class="mb-4">
+      <li><input type = "radio" value = "1 to 500" name="price" (click)="getWithPriceOnly(0,500)" >
+      Less than Rs 500</li>
+      <li><input type = "radio" value = "501 to 1500" name="price" (click)="getWithPriceOnly(501,1500)">
         Rs 501 - Rs 1500</li>
-      <li><input type = "checkbox" value = "1501 to 3000">
+      <li><input type = "radio" value = "1501 to 3000" name="price" (click)="getWithPriceOnly(1501,3000)">
         Rs 1501 - Rs 3000</li>
-      <li><input type = "checkbox" value = "3001 to 10000">
+      <li><input type = "radio" value = "3001 to 10000" name="price" (click)="getWithPriceOnly(3001,10000)">
         Rs 3001 - Rs 10000</li>
+      <li><input type = "radio" value = "10001 to 100000" name="price" (click)="getWithPriceOnly(10001,100000)">
+        More than Rs 10000</li>
+    </ul>
+    <hr>
+    <span>BRAND</span>
+    <ul>
+      <li><input type = "radio" value = "B&O" name="brand" (click)="showWithBrand('B&O')">
+        B&O</li>
+      <li><input type = "radio" value = "ADIDAS" name="brand" (click)="showWithBrand('ADIDAS')">
+        ADIDAS</li>
+      <li><input type = "radio" value = "PUMA" name="brand" (click)="showWithBrand('PUMA')">
+        PUMA</li>
+      <li><input type = "radio" value = "WRONGN" name="brand" (click)="showWithBrand('WROGN')">
+        WROGN</li>
+      <li><input type = "radio" value = "KOOKABURA" name="brand" (click)="showWithBrand('KOOKABURA')">
+        KOOKABURA</li>
     </ul>
   </div>
   <div class = "col-10 bg-dark mt-1">
-    <app-product-list></app-product-list>
+    <div class = "row">
+      <div class = "col-3" *ngFor="let p of products">
+        <div class= "pro-style rounded-lg pl-2 pt-1 pb-1"(click)="onShow(p)">
+          <img src="{{p.imgsrc}}" height="300px" class="mt-2 zprop">
+          <div><b>{{p.brand}}</b></div>
+          <div>"{{p.name}}"</div>
+          <div>Price-:<b>₹{{p.unitPrice}}</b></div>
+          <div align="center"><button class=" btn btn-dark rounded-lg">View</button> </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

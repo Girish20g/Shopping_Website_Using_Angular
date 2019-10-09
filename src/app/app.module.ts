@@ -8,13 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {NgMarqueeModule} from 'ng-marquee-improved';
-import {ProductService} from './product-list/product.service';
+import {ProductService} from './home-page/product.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ProductDetailsService} from './product-details/product-details.service';
+import {FormsModule} from '@angular/forms';
+import {AuthenticationService} from './authentication.service';
+import {AppService} from './app.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,6 @@ import {ProductDetailsService} from './product-details/product-details.service';
     HomePageComponent,
     NavBarComponent,
     ProductDetailsComponent,
-    ProductListComponent,
     UserCartComponent,
     SignUpComponent
   ],
@@ -32,11 +33,14 @@ import {ProductDetailsService} from './product-details/product-details.service';
     AppRoutingModule,
     HttpClientModule,
     NgMarqueeModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     ProductService,
-    ProductDetailsService
+    ProductDetailsService,
+    AuthenticationService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

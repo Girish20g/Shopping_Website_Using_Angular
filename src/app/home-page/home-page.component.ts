@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {ProductService} from './product.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +10,10 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomePageComponent implements OnInit {
 
+  products;
+  category1;
 
-
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
     config.interval = 1500;
     config.wrap = false;
     config.keyboard = true;
@@ -19,6 +22,39 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.category1 = null;
+    this.productService.getProductsFromServer().subscribe((data) => {
+      this.products = data;
+    });
   }
 
+  onShow(product) {
+    this.router.navigate(['/home', product.id]);
+  }
+
+  getWithCategory(cat) {
+    this.category1 = cat;
+    this.productService.getWithCat(cat).subscribe((data) => {
+      this.products = data;
+    });
+  }
+
+  getWithPriceOnly(c1, c2) {
+    if (!this.category1) {
+      this.productService.getWithPrice(c1, c2).subscribe((data) => {
+        this.products = data;
+      });
+    } else {
+      this.productService.getWithCategoryAndPrice(this.category1, c1, c2).subscribe((data) => {
+        this.products = data;
+      });
+    }
+  }
+
+  showWithBrand(b) {
+    this.productService.getWithbrand(b).subscribe((data) => {
+      this.products = data;
+    });
+  }
 }
+
