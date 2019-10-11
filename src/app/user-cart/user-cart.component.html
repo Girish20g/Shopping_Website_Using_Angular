@@ -1,1 +1,91 @@
-<p>user-cart works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th class="text-center">Price</th>
+          <th class="text-center">Total</th>
+          <th> </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of cartItems">
+          <td class="col-sm-8 col-md-6">
+            <div class="media">
+              <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{c.items.imgsrc}}" style="width: 72px; height: 72px;"> </a>
+              <div class="media-body">
+                <h4 class="media-heading"><a href="#">{{c.items.name}}</a></h4>
+                <h5 class="media-heading"> by <a href="#">{{c.items.brand}}</a></h5>
+                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+              </div>
+            </div></td>
+          <td class="col-sm-1 col-md-1" style="text-align: center;justify-content: center;width: 5rem;">
+            <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number" (click)="decrease(c.items.id)">
+                <i class="material-icons">minimize</i>
+              </button>
+              <input type="text" name="quant" class="form-control input-number" value={{c.quantity}} min="1" max="100">
+              <button type="button" class="btn btn-success btn-number" (click)="increase(c.items.id)">
+                <i class="material-icons">add </i>
+              </button>
+          </span>
+            </div>
+          </td>
+          <td class="col-sm-1 col-md-1 text-center"><strong>{{c.items.unitPrice}}</strong></td>
+          <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+          <td class="col-sm-1 col-md-1">
+            <button type="button" class="btn btn-danger" (click)="remove(c.items.id)">
+              <i class="material-icons">
+                delete_forever
+              </i><span style="vertical-align: top" >Remove</span>
+            </button></td>
+        </tr>
+        </tbody>
+      </table>
+        <table class="table table-hover">
+          <tbody>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h5>Subtotal</h5></td>
+          <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h5>Estimated shipping</h5></td>
+          <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h3>Total</h3></td>
+          <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td>
+            <button type="button" class="btn btn-default border-primary" style="width: 15rem;">
+              <i class="material-icons">shopping_cart</i><span style="vertical-align: top"> Continue Shopping</span>
+            </button></td>
+          <td>
+            <button type="button" class="btn btn-success" style="width: 8rem">
+              <span style="vertical-align: top"> Checkout </span><i class="material-icons">
+              play_arrow
+            </i>
+            </button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

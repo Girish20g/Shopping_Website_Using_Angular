@@ -10,8 +10,15 @@ export class ProductDetailsService {
 
   showProductDetails(id) {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/items/' + id;
+    return this.http.get(url);
+  }
+
+  addToCart(id) {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/cart/addItem/' + id;
     return this.http.get(url, {headers});
   }
 

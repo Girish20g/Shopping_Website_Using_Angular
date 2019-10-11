@@ -17,28 +17,28 @@ export class ProductService {
 
   getWithCat(cat) {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/category/' + cat;
-    return this.http.get(url, {headers});
+    return this.http.get(url);
   }
 
   getWithCategoryAndPrice(category, c1, c2) {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/' + category + '/' + c1 + '/' + c2;
-    return this.http.get(url, {headers});
+    return this.http.get(url);
   }
 
   getWithPrice(c1, c2) {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/' + c1 + '/' + c2;
-    return this.http.get(url, {headers});
+    return this.http.get(url);
   }
   getWithbrand(b) {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/' + b;
-    return this.http.get(url, {headers});
+    return this.http.get(url);
   }
 }

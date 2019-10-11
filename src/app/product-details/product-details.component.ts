@@ -23,7 +23,13 @@ export class ProductDetailsComponent implements OnInit {
         this.product_details = data;
       });
 
-
+  }
+  addItemsinCart() {
+    this.productDetailsService.addToCart(this.product_Id).subscribe((data) => {
+      this.product_details = data;
+      this.router.navigate(['/cart']);
+      console.log(data);
+    });
   }
 
 }

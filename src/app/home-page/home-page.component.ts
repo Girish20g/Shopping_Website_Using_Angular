@@ -12,7 +12,7 @@ export class HomePageComponent implements OnInit {
 
   products;
   category1;
-
+  range;
   constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
     config.interval = 1500;
     config.wrap = false;
@@ -34,6 +34,7 @@ export class HomePageComponent implements OnInit {
 
   getWithCategory(cat) {
     this.category1 = cat;
+    this.range = null;
     this.productService.getWithCat(cat).subscribe((data) => {
       this.products = data;
     });

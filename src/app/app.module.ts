@@ -17,6 +17,7 @@ import {ProductDetailsService} from './product-details/product-details.service';
 import {FormsModule} from '@angular/forms';
 import {AuthenticationService} from './authentication.service';
 import {AppService} from './app.service';
+import {UserCartService} from './user-cart/user-cart.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AppService} from './app.service';
     ProductService,
     ProductDetailsService,
     AuthenticationService,
-    AppService
+    AppService,
+    UserCartService
   ],
   bootstrap: [AppComponent]
 })
