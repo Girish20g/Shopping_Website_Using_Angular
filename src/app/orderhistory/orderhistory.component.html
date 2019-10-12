@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Sr.</th>
+      <th>Product</th>
+      <th>Date</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of oh; index as i">
+      <td>{{i+1}}</td>
+      <td>{{order.itemName}}</td>
+      <td>{{order.date | date: 'medium'}}</td>
+      <td>{{order.quantity}}</td>
+      <td>{{order.price}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

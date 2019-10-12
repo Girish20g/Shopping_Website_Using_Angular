@@ -21,14 +21,19 @@
           <span style="vertical-align: top">SignIn</span>
         </a>
       </li>
-        <li class="nav-item" (click)="logout()">
-          <a *ngIf="appservice.checkLogin()" class="nav-link text-white" ><i class="material-icons" style="color: yellow">exit_to_app</i>
-            <span style="vertical-align: top">Log-Out</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a *ngIf="appservice.checkLogin()" class="nav-link text-white" routerLink="/cart"><i class="material-icons" style="color: yellow">shopping_cart</i>
             <span style="vertical-align: top">My Cart</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="appservice.checkLogin()" class="nav-link text-white" routerLink="/orderhistory"><i class="material-icons" style="color: yellow">star_border</i>
+            <span style="vertical-align: top">My Orders</span>
+          </a>
+        </li>
+        <li class="nav-item" (click)="logout()">
+          <a *ngIf="appservice.checkLogin()" class="nav-link text-white" ><i class="material-icons" style="color: yellow">exit_to_app</i>
+            <span style="vertical-align: top">Log-Out</span>
           </a>
         </li>
       </ul>

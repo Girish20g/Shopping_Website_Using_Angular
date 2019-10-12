@@ -18,6 +18,9 @@ import {FormsModule} from '@angular/forms';
 import {AuthenticationService} from './authentication.service';
 import {AppService} from './app.service';
 import {UserCartService} from './user-cart/user-cart.service';
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+import {OrderhistoryService} from './orderhistory/orderhistory.service';
+import { PlacedComponent } from './placed/placed.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import {UserCartService} from './user-cart/user-cart.service';
     NavBarComponent,
     ProductDetailsComponent,
     UserCartComponent,
-    SignUpComponent
+    SignUpComponent,
+    OrderhistoryComponent,
+    PlacedComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import {UserCartService} from './user-cart/user-cart.service';
     ProductDetailsService,
     AuthenticationService,
     AppService,
-    UserCartService
+    UserCartService,
+    OrderhistoryService
   ],
   bootstrap: [AppComponent]
 })

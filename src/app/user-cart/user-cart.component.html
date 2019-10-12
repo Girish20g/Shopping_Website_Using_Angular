@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-2">
   <div class="row">
-    <div class="col-sm-12 col-md-10 col-md-offset-1">
-      <table class="table table-hover">
+    <div class="col-sm-12 col-md-10 col-md-offset-1" style="border: 1px solid darkblue">
+      <table class="table table-hover border-dark">
         <thead>
         <tr>
           <th>Product</th>
@@ -22,21 +22,17 @@
                 <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
               </div>
             </div></td>
-          <td class="col-sm-1 col-md-1" style="text-align: center;justify-content: center;width: 5rem;">
-            <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-danger btn-number" (click)="decrease(c.items.id)">
+          <td class="col-sm-1 col-md-1" >
+              <button type="button" class="btn btn-danger btn-number p-0" (click)="decrease(c.items.id)">
                 <i class="material-icons">minimize</i>
               </button>
-              <input type="text" name="quant" class="form-control input-number" value={{c.quantity}} min="1" max="100">
-              <button type="button" class="btn btn-success btn-number" (click)="increase(c.items.id)">
+              <input type="number" id="a" disabled name="quant" class="form-control input-number p-0" style="width: 27px;height: 27px" value={{c.quantity}}>
+              <button type="button" class="btn btn-success btn-number p-0" (click)="increase(c.items.id)">
                 <i class="material-icons">add </i>
               </button>
-          </span>
-            </div>
           </td>
           <td class="col-sm-1 col-md-1 text-center"><strong>{{c.items.unitPrice}}</strong></td>
-          <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+          <td class="col-sm-1 col-md-1 text-center"><strong>{{pt}}</strong></td>
           <td class="col-sm-1 col-md-1">
             <button type="button" class="btn btn-danger" (click)="remove(c.items.id)">
               <i class="material-icons">
@@ -52,33 +48,33 @@
           <td>   </td>
           <td>   </td>
           <td>   </td>
-          <td><h5>Subtotal</h5></td>
-          <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+          <td style="text-align: right;padding-right: 4rem"><h5>Subtotal</h5></td>
+          <td class="text-right"><h5><strong>{{total}}</strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
-          <td><h5>Estimated shipping</h5></td>
-          <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+          <td style="text-align: right"><h5>Estimated shipping</h5></td>
+          <td class="text-right"><h5><strong>{{tax}}</strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
-          <td><h3>Total</h3></td>
-          <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+          <td style="text-align: right;padding-right: 4rem"><h3>Total</h3></td>
+          <td class="text-right"><h3><strong>{{taxtotal}}</strong></h3></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
           <td>
-            <button type="button" class="btn btn-default border-primary" style="width: 15rem;">
+            <button type="button" class="btn btn-default border-primary" style="width: 15rem;" routerLink="/home">
               <i class="material-icons">shopping_cart</i><span style="vertical-align: top"> Continue Shopping</span>
             </button></td>
           <td>
-            <button type="button" class="btn btn-success" style="width: 8rem">
+            <button type="button" class="btn btn-success" style="width: 8rem" routerLink="/placed">
               <span style="vertical-align: top"> Checkout </span><i class="material-icons">
               play_arrow
             </i>

@@ -4,6 +4,8 @@ import {UserCartComponent} from './user-cart/user-cart.component';
 import {LoginComponent} from './login/login.component';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {ProductDetailsComponent} from './product-details/product-details.component';
+import {OrderhistoryComponent} from './orderhistory/orderhistory.component';
+import {PlacedComponent} from './placed/placed.component';
 
 export const MAIN_ROUTES: Routes = [
   {
@@ -28,5 +30,13 @@ export const MAIN_ROUTES: Routes = [
   {
     path: 'home/:id',
     component: ProductDetailsComponent
+  },
+  {
+    path: 'orderhistory',
+    component: OrderhistoryComponent
+  },
+  {
+    path: 'placed',
+    component: PlacedComponent
   }
   ];
