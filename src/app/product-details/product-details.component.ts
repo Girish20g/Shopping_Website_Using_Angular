@@ -11,7 +11,7 @@ export class ProductDetailsComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   product_Id;
   // tslint:disable-next-line:variable-name
-  product_details;
+  product_details = { };
   constructor(private productDetailsService: ProductDetailsService , private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {

@@ -1,3 +1,7 @@
+<!--<div *ngIf="cartItems.length=0">
+  Cart Is Empty.
+</div>-->
+<div *ngIf="cartItems.length>0; else elseblock">
 <div class="container mt-2">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1" style="border: 1px solid darkblue">
@@ -7,13 +11,12 @@
           <th>Product</th>
           <th>Quantity</th>
           <th class="text-center">Price</th>
-          <th class="text-center">Total</th>
           <th> </th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let c of cartItems">
-          <td class="col-sm-8 col-md-6">
+          <td>
             <div class="media">
               <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{c.items.imgsrc}}" style="width: 72px; height: 72px;"> </a>
               <div class="media-body">
@@ -22,18 +25,25 @@
                 <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
               </div>
             </div></td>
-          <td class="col-sm-1 col-md-1" >
+          <td >
+            <div class="form-group">
+            <div class="input-group">
+            <div class="input-group-btn">
               <button type="button" class="btn btn-danger btn-number p-0" (click)="decrease(c.items.id)">
                 <i class="material-icons">minimize</i>
               </button>
-              <input type="number" id="a" disabled name="quant" class="form-control input-number p-0" style="width: 27px;height: 27px" value={{c.quantity}}>
-              <button type="button" class="btn btn-success btn-number p-0" (click)="increase(c.items.id)">
+            </div>
+              <input type="number" id="a" disabled name="quant" class="form-control input-number p-0" style="width: 33px;height: 27px" value={{c.quantity}}>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success btn-number p-0" (click)="increase(c.items.id)">
                 <i class="material-icons">add </i>
               </button>
+              </div>
+            </div>
+            </div>
           </td>
-          <td class="col-sm-1 col-md-1 text-center"><strong>{{c.items.unitPrice}}</strong></td>
-          <td class="col-sm-1 col-md-1 text-center"><strong>{{pt}}</strong></td>
-          <td class="col-sm-1 col-md-1">
+          <td class="text-center"><strong>{{c.items.unitPrice}}</strong></td>
+          <td>
             <button type="button" class="btn btn-danger" (click)="remove(c.items.id)">
               <i class="material-icons">
                 delete_forever
@@ -85,3 +95,13 @@
     </div>
   </div>
 </div>
+</div>
+<ng-template #elseblock>
+  <div class="container text-center border-dark">
+    <img class="mt-5 pt-5 mb-4" src="./assets/image/empty.PNG">
+    <h3 CLASS="font-weight-bolder text-warning">Oops!! Your Cart Is Empty</h3>
+    <button type="button" class="btn btn-default border-primary" style="width: 15rem;" routerLink="/home">
+      <i class="material-icons">shopping_cart</i><span style="vertical-align: top"> Continue Shopping</span>
+    </button>
+  </div>
+</ng-template>

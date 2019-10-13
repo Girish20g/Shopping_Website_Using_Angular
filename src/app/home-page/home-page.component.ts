@@ -13,6 +13,8 @@ export class HomePageComponent implements OnInit {
   products;
   category1;
   range;
+  bfilter;
+  search;
   constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
     config.interval = 1500;
     config.wrap = false;
@@ -35,6 +37,7 @@ export class HomePageComponent implements OnInit {
   getWithCategory(cat) {
     this.category1 = cat;
     this.range = null;
+    this.bfilter = null;
     this.productService.getWithCat(cat).subscribe((data) => {
       this.products = data;
     });
@@ -52,10 +55,17 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  showWithBrand(b) {
-    this.productService.getWithbrand(b).subscribe((data) => {
-      this.products = data;
-    });
+  showWithBrandAndCategory(b) {
+    if (!this.category1) {
+      this.productService.getWithbrand(b).subscribe((data) => {
+        this.products = data;
+      });
+    } else {
+      this.productService.getWithBrandAndCategory(this.category1,b).subscribe((data) => {
+        this.products = data;
+      });
+    }
+
   }
 }
 

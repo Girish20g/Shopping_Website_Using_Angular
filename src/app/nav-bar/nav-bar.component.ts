@@ -9,12 +9,13 @@ import {Router} from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
+  search;
   constructor(private appservice: AppService, private router: Router) { }
 
   ngOnInit() {
-    if (!this.appservice.checkLogin()) {
-      this.router.navigate(['/login']);
-    }
+    /*if (!this.appservice.checkLogin()) {
+      this.router.navigate(['/sign_in']);
+    }*/
 
   }
 
@@ -23,5 +24,4 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['sign_in']);
   }
 
-
-}
+  }

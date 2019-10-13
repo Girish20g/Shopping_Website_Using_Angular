@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-<div class="bg-dark">
+<div *ngIf="category1==null" class="bg-dark">
   <ngb-carousel  class="mt-1 mb-2">
     <ng-template ngbSlide >
       <img src="./assets/image/carousel1.PNG" height="450px" class="w-100" alt="Random first slide">
@@ -40,15 +40,15 @@
     <hr>
     <span>BRAND</span>
     <ul>
-      <li><input type = "radio" value = "B&O" name="brand" (click)="showWithBrand('B&O')">
+      <li><input type = "radio" value = "B&O" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('B&O')">
         B&O</li>
-      <li><input type = "radio" value = "ADIDAS" name="brand" (click)="showWithBrand('ADIDAS')">
+      <li><input type = "radio" value = "ADIDAS" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('ADIDAS')">
         ADIDAS</li>
-      <li><input type = "radio" value = "PUMA" name="brand" (click)="showWithBrand('PUMA')">
+      <li><input type = "radio" value = "PUMA" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('PUMA')">
         PUMA</li>
-      <li><input type = "radio" value = "WRONGN" name="brand" (click)="showWithBrand('WROGN')">
+      <li><input type = "radio" value = "WRONGN" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('WROGN')">
         WROGN</li>
-      <li><input type = "radio" value = "KOOKABURA" name="brand" (click)="showWithBrand('KOOKABURA')">
+      <li><input type = "radio" value = "KOOKABURA" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('KOOKABURA')">
         KOOKABURA</li>
     </ul>
   </div>
