@@ -6,6 +6,7 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {ProductDetailsComponent} from './product-details/product-details.component';
 import {OrderhistoryComponent} from './orderhistory/orderhistory.component';
 import {PlacedComponent} from './placed/placed.component';
+import {MyprofileComponent} from './myprofile/myprofile.component';
 
 export const MAIN_ROUTES: Routes = [
   {
@@ -38,5 +39,9 @@ export const MAIN_ROUTES: Routes = [
   {
     path: 'placed',
     component: PlacedComponent
+  },
+  {
+    path: 'myprofile',
+    component: MyprofileComponent
   }
   ];

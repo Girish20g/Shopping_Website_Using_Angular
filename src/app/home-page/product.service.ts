@@ -48,4 +48,11 @@ export class ProductService {
     const url = 'http://localhost:2020/api/category/brand/' + cat + '/' + b;
     return this.http.get(url);
   }
+
+  getByName(name) {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/api/search/' + name;
+    return this.http.get(url, {headers});
+  }
 }

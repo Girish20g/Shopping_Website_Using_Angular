@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {datepickerAnimation} from 'ngx-bootstrap/datepicker/datepicker-animations';
 import {AppService} from '../app.service';
+import {UserCartService} from './user-cart.service';
 
 @Component({
   selector: 'app-user-cart',
@@ -14,7 +15,7 @@ export class UserCartComponent implements OnInit {
   total = 0;
   tax = 100;
   taxtotal = 0;
-  constructor(private router: Router, private route: ActivatedRoute, private userCartService: AppService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private userCartService: AppService, private usercartservice: UserCartService) { }
 
   ngOnInit() {
     this.userCartService.showcart().subscribe((data) => {
@@ -65,6 +66,19 @@ export class UserCartComponent implements OnInit {
       this.total = sum;
       this.taxtotal = this.total + this.tax;
       this.ngOnInit();
+    });
+  }
+
+  detail(id) {
+    // tslint:disable-next-line:no-unused-expression
+    this.usercartservice.showProductDetails(id).subscribe((data) => {
+      this.router.navigate(['/home/' + id]);
+    });
+  }
+
+  checkout() {
+    this.usercartservice.getcheck().subscribe((data) => {
+      this.router.navigate(['/placed']);
     });
   }
 

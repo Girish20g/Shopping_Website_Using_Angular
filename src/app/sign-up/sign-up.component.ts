@@ -14,6 +14,9 @@ export class SignUpComponent implements OnInit {
 
   username;
   password;
+  name;
+  phone;
+  gender;
   url = 'http://localhost:2020/users/addUsers';
 
   ngOnInit() {
@@ -24,7 +27,7 @@ export class SignUpComponent implements OnInit {
   }
 
   userData() {
-    const ar = {username: this.username,  password: this.password};
+    const ar = {username: this.username,  password: this.password, name: this.name, phone: this.phone, gender: this.gender};
     this.http.post(this.url, ar).subscribe(data => {
       this.router.navigate(['/sign_in']);
     });

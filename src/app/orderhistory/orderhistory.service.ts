@@ -11,7 +11,7 @@ export class OrderhistoryService {
   getOrderHistory() {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
-    const url = 'http://localhost:2020/cart/checkout';
+    const url = 'http://localhost:2020/cart/orderhist';
     return this.httpClient.get(url, {headers});
   }
 

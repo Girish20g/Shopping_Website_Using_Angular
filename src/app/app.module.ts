@@ -21,6 +21,7 @@ import {UserCartService} from './user-cart/user-cart.service';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 import {OrderhistoryService} from './orderhistory/orderhistory.service';
 import { PlacedComponent } from './placed/placed.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PlacedComponent } from './placed/placed.component';
     UserCartComponent,
     SignUpComponent,
     OrderhistoryComponent,
-    PlacedComponent
+    PlacedComponent,
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,

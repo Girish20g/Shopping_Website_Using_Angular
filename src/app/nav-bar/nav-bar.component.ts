@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppService} from '../app.service';
 import {Router} from '@angular/router';
+import {NavBarService} from './nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,8 +10,8 @@ import {Router} from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  search;
-  constructor(private appservice: AppService, private router: Router) { }
+
+  constructor(private appservice: AppService, private router: Router, private nav: NavBarService) { }
 
   ngOnInit() {
     /*if (!this.appservice.checkLogin()) {
@@ -23,5 +24,6 @@ export class NavBarComponent implements OnInit {
     this.appservice.isLoggedIn(false);
     this.router.navigate(['sign_in']);
   }
+
 
   }

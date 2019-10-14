@@ -1,0 +1,38 @@
+<div class="row mt-5 pt-5 container ">
+  <div class="col-6 text-center">
+    <img src="{{userImg}}" alt="user" class="rounded-circle">
+    <div class="mt-4">
+      <button class="btn btn-primary" (click)="toggle()">Edit Profile</button>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-primary" routerLink="/orderhistory">Order History</button>
+    </div>
+  </div>
+  <div class="col-6" *ngIf="user">
+    <div class="mb-4">
+      <h4>Full Name :-</h4>
+      <input type="text" value="{{user.name}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.name">
+    </div>
+    <div class="mb-4">
+      <h4>Email :-</h4>
+      <input type="email" value="{{user.username}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.username">
+    </div>
+    <div class="mb-4">
+      <h4>Gender :-</h4>
+      <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" class="pl-2 p-1" [disabled]="disabled"> Male &nbsp;</label>
+      <label><input type="radio" name="gender" [(ngModel)]="user.gender"  value="Female" class="pl-2 p-1" [disabled]="disabled"> Female</label>
+    </div>
+    <div class="mb-4">
+      <h4>Phone :-</h4>
+      <input type="number" value="{{user.phone}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.phone">
+    </div>
+    <div class="mb-4">
+      <h4>Password :-</h4>
+      <input type="password" value="{{user.password}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.password">
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 text-center">
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</div>

@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
   category1;
   range;
   bfilter;
-  search;
+  see;
   constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
     config.interval = 1500;
     config.wrap = false;
@@ -25,6 +25,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.category1 = null;
+    this.range = null;
+    this.bfilter = null;
     this.productService.getProductsFromServer().subscribe((data) => {
       this.products = data;
     });
@@ -66,6 +68,12 @@ export class HomePageComponent implements OnInit {
       });
     }
 
+  }
+
+  seename() {
+    this.productService.getByName(this.see).subscribe((data) => {
+      this.products = data;
+    });
   }
 }
 

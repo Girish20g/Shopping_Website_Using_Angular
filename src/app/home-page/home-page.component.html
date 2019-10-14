@@ -1,24 +1,31 @@
+<div class="container justify-content-center  d-flex">
+  <input class="p-1 m-1" [(ngModel)]="see" name="any" type="text" placeholder="Search for products,brand or more">
+  <button (click)="seename()"><i class = "material-icons"  style="font-size: 2rem;color: yellow">search</i></button>
+</div>
 <div class="bg-dark">
   <div class="container">
     <div class = "row">
-      <div class = "col-2dot4" (click)="ngOnInit()"><a class="nav-link text-white"><h6>HOME</h6></a></div>
-      <div class = "col-sm-2dot4" (click)="getWithCategory('Electronics')"><a class="nav-link text-white" ><h6>ELECTRONICS</h6></a></div>
-      <div class = "col-md-2dot4" (click)="getWithCategory('Books')"><a class="nav-link text-white" ><h6>BOOKS</h6></a></div>
-      <div class = "col-lg-2dot4" (click)="getWithCategory('Sports')"><a class="nav-link text-white"><h6>SPORTS</h6></a></div>
-      <div class = "col-xl-2dot4" (click)="getWithCategory('Fashion')"><a class="nav-link text-white" ><h6>FASHION</h6></a></div>
+      <div class = "col-2dot4 ptr" (click)="ngOnInit()"><a class="nav-link text-white"><h6>HOME</h6></a></div>
+      <div class = "col-sm-2dot4 ptr" (click)="getWithCategory('Electronics')"><a class="nav-link text-white" ><h6>ELECTRONICS</h6></a></div>
+      <div class = "col-md-2dot4 ptr" (click)="getWithCategory('Books')"><a class="nav-link text-white" ><h6>BOOKS</h6></a></div>
+      <div class = "col-lg-2dot4 ptr" (click)="getWithCategory('Sports')"><a class="nav-link text-white"><h6>SPORTS</h6></a></div>
+      <div class = "col-xl-2dot4 ptr" (click)="getWithCategory('Fashion')"><a class="nav-link text-white" ><h6>FASHION</h6></a></div>
     </div>
   </div>
 </div>
 <div *ngIf="category1==null" class="bg-dark">
   <ngb-carousel  class="mt-1 mb-2">
+    <ng-template ngbSlide>
+      <img src="./assets/image/carousel4.PNG" height="530px" class="w-100" alt="Random third slide">
+    </ng-template>
     <ng-template ngbSlide >
-      <img src="./assets/image/carousel1.PNG" height="450px" class="w-100" alt="Random first slide">
+      <img src="./assets/image/carousel1.PNG" height="530px" class="w-100" alt="Random first slide">
     </ng-template>
     <ng-template ngbSlide>
-      <img src="./assets/image/carousel2.PNG" height="450px" class="w-100" alt="Random second slide">
+      <img src="./assets/image/carousel2.PNG" height="530px" class="w-100" alt="Random second slide">
     </ng-template>
     <ng-template ngbSlide>
-      <img src="./assets/image/carousel3.PNG" height="450px" class="w-100" alt="Random third slide">
+      <img src="./assets/image/carousel3.PNG" height="530px" class="w-100" alt="Random third slide">
     </ng-template>
   </ngb-carousel>
 </div>

@@ -18,10 +18,10 @@
         <tr *ngFor="let c of cartItems">
           <td>
             <div class="media">
-              <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{c.items.imgsrc}}" style="width: 72px; height: 72px;"> </a>
+              <a class="thumbnail pull-left" (click)="detail(c.items.id)"> <img class="media-object ptr" src="{{c.items.imgsrc}}" style="width: 72px; height: 72px;"> </a>
               <div class="media-body">
-                <h4 class="media-heading"><a href="#">{{c.items.name}}</a></h4>
-                <h5 class="media-heading"> by <a href="#">{{c.items.brand}}</a></h5>
+                <h4 class="media-heading"><a (click)="detail(c.items.id)" class="ptr">{{c.items.name}}</a></h4>
+                <h5 class="media-heading"> by <b class="text-primary">{{c.items.brand}}</b></h5>
                 <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
               </div>
             </div></td>
@@ -84,7 +84,7 @@
               <i class="material-icons">shopping_cart</i><span style="vertical-align: top"> Continue Shopping</span>
             </button></td>
           <td>
-            <button type="button" class="btn btn-success" style="width: 8rem" routerLink="/placed">
+            <button type="button" class="btn btn-success" style="width: 8rem" (click)="checkout()">
               <span style="vertical-align: top"> Checkout </span><i class="material-icons">
               play_arrow
             </i>
