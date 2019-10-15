@@ -1,11 +1,22 @@
 <div class="row mt-5 pt-5 container ">
   <div class="col-6 text-center">
-    <img src="{{userImg}}" alt="user" class="rounded-circle">
+    <div *ngIf="app.isAdmin(); else elseblock">
+      <img src="./assets/image/admin.jpg" alt="user" width="250px" height="250px" class="rounded-circle">
+    </div>
+    <ng-template #elseblock>
+      <img src="./assets/image/user.PNG" alt="user" class="rounded-circle">
+    </ng-template>
     <div class="mt-4">
-      <button class="btn btn-primary" (click)="toggle()">Edit Profile</button>
+      <span class="bg-light font-weight-bolder">{{user.authorize}}</span>
+    </div>
+    <div *ngIf="app.isAdmin()" class="mt-4">
+      <button routerLink="/addproduct" class="btn btn-dark">Add Products</button>
     </div>
     <div class="mt-4">
-      <button class="btn btn-primary" routerLink="/orderhistory">Order History</button>
+      <button class="btn btn-dark" (click)="toggle()">Edit Profile</button>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-dark" routerLink="/orderhistory">Order History</button>
     </div>
   </div>
   <div class="col-6" *ngIf="user">
@@ -15,24 +26,24 @@
     </div>
     <div class="mb-4">
       <h4>Email :-</h4>
-      <input type="email" value="{{user.username}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.username">
+      <input type="email" value="{{user.email}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.email">
     </div>
     <div class="mb-4">
       <h4>Gender :-</h4>
-      <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" class="pl-2 p-1" [disabled]="disabled"> Male &nbsp;</label>
-      <label><input type="radio" name="gender" [(ngModel)]="user.gender"  value="Female" class="pl-2 p-1" [disabled]="disabled"> Female</label>
+      <input type="text" name="gender" [(ngModel)]="user.gender" value="Male" class="pl-2 p-1" [disabled]="disabled">
+      <!--<label><input type="radio" name="gender" [(ngModel)]="user.gender"  value="Female" class="pl-2 p-1" [disabled]="disabled"> Female</label>-->
     </div>
     <div class="mb-4">
       <h4>Phone :-</h4>
       <input type="number" value="{{user.phone}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.phone">
     </div>
     <div class="mb-4">
-      <h4>Password :-</h4>
-      <input type="password" value="{{user.password}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.password">
+      <h4>Address :-</h4>
+      <input type="text" value="{{user.address}}" size="100" class="pl-2 p-1" [disabled]="disabled" [(ngModel)]="user.address">
     </div>
   </div>
 </div>
 
 <div class="mt-4 text-center">
-  <button class="btn btn-primary" (click)="save()">Save</button>
+  <button class="btn btn-dark" (click)="save()">Save</button>
 </div>

@@ -17,20 +17,26 @@ export class SignUpComponent implements OnInit {
   name;
   phone;
   gender;
+  email;
+  address;
+  x;
+  prod;
   url = 'http://localhost:2020/users/addUsers';
 
   ngOnInit() {
-    if (this.appservice.checkLogin()) {
-      this.router.navigate(['/home']);
-    }
-
+    this.appservice.getUsers().subscribe(data => {
+      this.prod = data;
+      console.log(data);
+    });
   }
 
   userData() {
-    const ar = {username: this.username,  password: this.password, name: this.name, phone: this.phone, gender: this.gender};
+    this.x = 0;
+    const ar = {username: this.username,  password: this.password, name: this.name, phone: this.phone, gender: this.gender, email: this.email, address: this.address};
     this.http.post(this.url, ar).subscribe(data => {
-      this.router.navigate(['/sign_in']);
-    });
+        alert('New User Added');
+        this.router.navigate(['/sign_in']);
+      });
   }
 
 

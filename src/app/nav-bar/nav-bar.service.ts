@@ -7,5 +7,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class NavBarService {
 
   constructor(private http: HttpClient) { }
-
+  getUsers() {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/users/logUser';
+    return this.http.get(url, {headers});
+  }
 }

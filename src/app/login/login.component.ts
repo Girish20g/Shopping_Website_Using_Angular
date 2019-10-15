@@ -23,6 +23,13 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
+        if (this.username === 'girish' && this.password === '20') {
+          this.appservice.myfun(true);
+          alert('Logged In As Admin');
+        } else {
+          this.appservice.myfun(false);
+          alert('Logged In As Customer');
+        }
         this.appservice.isLoggedIn(true);
         this.router.navigate(['home']);
       }

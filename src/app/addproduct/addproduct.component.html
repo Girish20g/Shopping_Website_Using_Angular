@@ -1,0 +1,73 @@
+<div class="container">
+  <h1 class="text-warning" style="font-family: 'Comic Sans MS'">ADD PRODUCT</h1>
+</div>
+<div class="container border border-dark rounded-lg mt-3">
+
+  <form >
+
+
+    <form  class="form-horizontal mt-2" >
+      <div id="div_id_username" class="form-group required">
+        <label class="control-label col-md-4  requiredField"> Name<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md  textinput textInput form-control" [(ngModel)]="name" maxlength="30" name="username" placeholder="Enter Name Of the Product" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_email" class="form-group required">
+        <label class="control-label col-md-4  requiredField">Brand<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md emailinput form-control" [(ngModel)]="brand" name="brand" placeholder="Enter Brand In Capital Letters" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_password1" class="form-group required">
+        <label class="control-label col-md-4  requiredField">Category<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="category" name="cat" placeholder="Enter Category" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_password2" class="form-group required">
+        <label class="control-label col-md-4  requiredField"> Code<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="code" name="Code" placeholder="Enter Code" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_name" class="form-group required">
+        <label class="control-label col-md-4  requiredField">Description<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="description" name="name" placeholder="Write Description Of Product" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_company" class="form-group required">
+        <label class="control-label col-md-4  requiredField">Image Source<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="imgsrc" name="img" placeholder="Enter Image Source" style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+      <div id="div_id_catagory" class="form-group required">
+        <label class="control-label col-md-4  requiredField">Quantity Available<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="quantity" name="qty" placeholder="Enter Quantity In Stocks" style="margin-bottom: 10px" type="number" />
+        </div>
+      </div>
+      <div id="div_id_number" class="form-group required">
+        <label class="control-label col-md-4  requiredField"> Supplier-ID<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="supplierId" name="number" placeholder="Enter Supplier Id" style="margin-bottom: 10px" type="number" />
+        </div>
+      </div>
+      <div id="div_id_location" class="form-group required">
+        <label class="control-label col-md-4  requiredField"> Price<span class="asteriskField">*</span> </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md textinput textInput form-control" [(ngModel)]="unitPrice" name="pri" placeholder="Enter Price" style="margin-bottom: 10px" type="number" />
+        </div>
+      </div>
+        <div class=" col-md-4 "></div>
+        <div class="controls col-md-8 ">
+          <input type="submit" routerLink="/home" name="Signup" value="Cancel" class="btn btn-primary btn btn-info" />
+          or <input type="button" (click)="addproduct()" name="Signup" value="Add Product" class="btn btn btn-dark" />
+        </div>
+
+    </form>
+
+  </form>
+</div>

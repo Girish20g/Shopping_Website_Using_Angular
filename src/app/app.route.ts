@@ -7,6 +7,7 @@ import {ProductDetailsComponent} from './product-details/product-details.compone
 import {OrderhistoryComponent} from './orderhistory/orderhistory.component';
 import {PlacedComponent} from './placed/placed.component';
 import {MyprofileComponent} from './myprofile/myprofile.component';
+import {AddproductComponent} from './addproduct/addproduct.component';
 
 export const MAIN_ROUTES: Routes = [
   {
@@ -43,5 +44,9 @@ export const MAIN_ROUTES: Routes = [
   {
     path: 'myprofile',
     component: MyprofileComponent
+  },
+  {
+    path: 'addproduct',
+    component: AddproductComponent
   }
   ];

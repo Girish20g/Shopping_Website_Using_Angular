@@ -17,6 +17,17 @@ export class AppService {
     return JSON.parse(auth);
   }
 
+  isAdmin() {
+    const ad = sessionStorage.getItem('admin');
+    return JSON.parse(ad);
+    console.log(ad);
+  }
+
+  myfun(bool: boolean) {
+    sessionStorage.setItem('admin', String(bool));
+    return bool;
+  }
+
   showcart() {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
@@ -42,6 +53,13 @@ export class AppService {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/cart/decrement/1/' + id;
+    return this.httpClient.get(url, {headers});
+  }
+
+  getUsers() {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/users/logUser';
     return this.httpClient.get(url, {headers});
   }
 

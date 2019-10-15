@@ -1,6 +1,12 @@
 <div class="container justify-content-center  d-flex">
-  <input class="p-1 m-1" [(ngModel)]="see" name="any" type="text" placeholder="Search for products,brand or more">
-  <button (click)="seename()"><i class = "material-icons"  style="font-size: 2rem;color: yellow">search</i></button>
+  <!--<form>
+    <input class="p-1 m-0" [(ngModel)]="see" name="any" type="text" placeholder="Search for products,brand or more">
+    <button class="p-1 m-1" type="submit" (click)="seename()"><i class = "material-icons"  style="font-size: 2rem;color: black">search</i></button>
+  </form>-->
+  <form class="example" style="margin:auto;max-width:300px">
+    <input type="text" [(ngModel)]="see" placeholder="Search BY Name" name="search2">
+    <button type="submit" (click)="seename()"><i class="material-icons">search</i></button>
+  </form>
 </div>
 <div class="bg-dark">
   <div class="container">
@@ -58,6 +64,10 @@
       <li><input type = "radio" value = "KOOKABURA" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('KOOKABURA')">
         KOOKABURA</li>
     </ul>
+  </div>
+  <div *ngIf="products.length==0" class="d-flex">
+    <div><img src="./assets/image/result.PNG"></div>
+    <div style="font-size: 50px" class="text-warning">No Results Found</div>
   </div>
   <div class = "col-10 bg-dark mt-1">
     <div class = "row">

@@ -55,4 +55,5 @@ export class ProductService {
     const url = 'http://localhost:2020/api/search/' + name;
     return this.http.get(url, {headers});
   }
+
 }

@@ -42,7 +42,7 @@
             </div>
             </div>
           </td>
-          <td class="text-center"><strong>{{c.items.unitPrice}}</strong></td>
+          <td class="text-center"><strong>₹{{c.items.unitPrice}}</strong></td>
           <td>
             <button type="button" class="btn btn-danger" (click)="remove(c.items.id)">
               <i class="material-icons">
@@ -59,21 +59,21 @@
           <td>   </td>
           <td>   </td>
           <td style="text-align: right;padding-right: 4rem"><h5>Subtotal</h5></td>
-          <td class="text-right"><h5><strong>{{total}}</strong></h5></td>
+          <td class="text-right"><h5><strong>₹{{total}}</strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
           <td style="text-align: right"><h5>Estimated shipping</h5></td>
-          <td class="text-right"><h5><strong>{{tax}}</strong></h5></td>
+          <td class="text-right"><h5><strong>₹{{tax}}</strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
           <td style="text-align: right;padding-right: 4rem"><h3>Total</h3></td>
-          <td class="text-right"><h3><strong>{{taxtotal}}</strong></h3></td>
+          <td class="text-right"><h3 class="text-warning"><strong>₹{{taxtotal}}</strong></h3></td>
         </tr>
         <tr>
           <td>   </td>
