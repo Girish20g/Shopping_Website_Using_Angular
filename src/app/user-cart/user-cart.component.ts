@@ -12,6 +12,7 @@ import {UserCartService} from './user-cart.service';
 export class UserCartComponent implements OnInit {
   cartItems;
 
+
   total = 0;
   tax = 100;
   taxtotal = 0;

@@ -11,6 +11,7 @@ import {AppService} from '../app.service';
 export class LoginComponent implements OnInit {
   username;
   password;
+  invalid = false;
   constructor(private router: Router, private loginservice: AuthenticationService, private appservice: AppService) { }
 
   ngOnInit() {
@@ -31,7 +32,10 @@ export class LoginComponent implements OnInit {
           alert('Logged In As Customer');
         }
         this.appservice.isLoggedIn(true);
+        this.invalid = false;
         this.router.navigate(['home']);
+      }, error => {
+        this.invalid = true;
       }
     );
 

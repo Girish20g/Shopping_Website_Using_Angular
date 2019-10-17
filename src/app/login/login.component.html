@@ -13,6 +13,9 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">Sign In</h5>
+          <div class="container justify-content-center text-danger mx-auto" *ngIf="invalid">
+            <span>Please Enter Correct Details!!</span>
+          </div>
           <form class="form-signin">
             <div class="form-label-group">
               <label for="inputUsername" ><b>USERNAME-:</b></label>

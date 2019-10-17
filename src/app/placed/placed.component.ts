@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from '../app.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-placed',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private app: AppService, private router: Router) { }
 
   ngOnInit() {
+    if (!this.app.checkLogin()) {
+      this.router.navigate(['/sign_in']);
+    }
   }
 
 }

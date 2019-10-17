@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {ProductService} from './product.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,12 +11,12 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  products;
+  products: Object = [];
   category1;
   range;
   bfilter;
   see;
-  constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
+  constructor(config: NgbCarouselConfig, private productService: ProductService, private router: Router, private route: ActivatedRoute, private app: AppService) {
     config.interval = 1500;
     config.wrap = false;
     config.keyboard = true;
@@ -24,12 +25,15 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.app.checkLogin()) {
+      this.router.navigate(['/sign_in']);
+    }
     this.category1 = null;
     this.range = null;
     this.bfilter = null;
-    this.productService.getProductsFromServer().subscribe((data) => {
-      this.products = data;
-    });
+      this.productService.getProductsFromServer().subscribe((data) => {
+        this.products = data;
+      });
   }
 
   onShow(product) {

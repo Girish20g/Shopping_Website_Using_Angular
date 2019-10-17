@@ -26,6 +26,9 @@ export class AddproductComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router, private serve: AppService, private r: ActivatedRoute) { }
 
   ngOnInit() {
+    if (!this.serve.checkLogin()) {
+      this.route.navigate(['/sign_in']);
+    }
     if (this.serve.checkEdit()) {
       this.r.queryParamMap.subscribe((data) => {
         this.id = data.get('id');

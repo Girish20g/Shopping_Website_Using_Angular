@@ -16,6 +16,9 @@ export class MyprofileComponent implements OnInit {
   constructor(private myProfileService: MyprofileService, private router: Router, private route: ActivatedRoute, private http: HttpClient, private app: AppService) { }
 
   ngOnInit() {
+    if (!this.app.checkLogin()) {
+      this.router.navigate(['/sign_in']);
+    }
     this.myProfileService.getUsers().subscribe(data => {
       this.user = data;
       console.log(data);

@@ -32,11 +32,33 @@ export class SignUpComponent implements OnInit {
 
   userData() {
     this.x = 0;
-    const ar = {username: this.username,  password: this.password, name: this.name, phone: this.phone, gender: this.gender, email: this.email, address: this.address};
-    this.http.post(this.url, ar).subscribe(data => {
-        alert('New User Added');
-        this.router.navigate(['/sign_in']);
+    const ar = {
+      username: this.username,
+      password: this.password,
+      name: this.name,
+      phone: this.phone,
+      gender: this.gender,
+      email: this.email,
+      address: this.address
+    };
+    for (let i = 0; i < this.prod.length; i++) {
+      if (this.prod[i].username === ar.username) {
+        alert('Username Already Exist');
+        this.x = 1;
+        break;
+      }
+      if (this.prod[i].email === ar.email) {
+        alert('Email Already Exist');
+        this.x = 1;
+        break;
+      }
+    }
+    if (this.x === 0) {
+      this.http.post(this.url, ar).subscribe(data => {
+          alert('New User Added');
+          this.router.navigate(['/sign_in']);
       });
+    }
   }
 
 

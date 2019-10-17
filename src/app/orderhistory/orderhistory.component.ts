@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OrderhistoryService} from './orderhistory.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AppService} from '../app.service';
 
 
 
@@ -12,9 +13,12 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class OrderhistoryComponent implements OnInit {
 
   oh;
-  constructor(private ohservice: OrderhistoryService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private ohservice: OrderhistoryService, private router: Router, private route: ActivatedRoute, private app: AppService) { }
 
   ngOnInit() {
+    if (!this.app.checkLogin()) {
+      this.router.navigate(['/sign_in']);
+    }
     this.ohservice.getOrderHistory().subscribe((data) => {
       this.oh = data;
     });

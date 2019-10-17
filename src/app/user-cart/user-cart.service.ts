@@ -10,9 +10,9 @@ export class UserCartService {
 
   showProductDetails(id) {
     const token = sessionStorage.getItem('token');
-    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/items/' + id;
-    return this.httpClient.get(url);
+    return this.httpClient.get(url, {headers});
   }
 
   getcheck() {

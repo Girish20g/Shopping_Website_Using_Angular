@@ -69,9 +69,9 @@ export class AppService {
 
   getUsers() {
     const token = sessionStorage.getItem('token');
-    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
-    const url = 'http://localhost:2020/users/logUser';
-    return this.httpClient.get(url, {headers});
+    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/users/getUsers';
+    return this.httpClient.get(url);
   }
 
   editproduct(id , item) {
