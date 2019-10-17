@@ -28,6 +28,17 @@ export class AppService {
     return bool;
   }
 
+  edit(bool: boolean) {
+    sessionStorage.setItem('edit', String(bool));
+    return bool;
+  }
+
+  checkEdit() {
+    const ad = sessionStorage.getItem('edit');
+    return JSON.parse(ad);
+    console.log(ad);
+  }
+
   showcart() {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
@@ -60,6 +71,18 @@ export class AppService {
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/users/logUser';
+    return this.httpClient.get(url, {headers});
+  }
+
+  editproduct(id , item) {
+    const headers = new HttpHeaders({Authorization: 'Basic ' + sessionStorage.getItem('token')});
+    return this.httpClient.put('http://localhost:2020/api/edit-product?id=' + id, item, {headers});
+  }
+
+  showProductDetails(id) {
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const url = 'http://localhost:2020/api/items/' + id;
     return this.httpClient.get(url, {headers});
   }
 

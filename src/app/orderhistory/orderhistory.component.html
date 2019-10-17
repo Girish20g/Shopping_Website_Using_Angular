@@ -1,3 +1,11 @@
+<div class="container text-center" *ngIf="oh.length==0; else show">
+  <img class="mt-5 pt-5 mb-4" src="./assets/image/empty.PNG">
+  <h3 CLASS="font-weight-bolder text-danger">NO ORDERS YET</h3>
+  <button type="button" class="btn btn-default border-primary" style="width: 15rem;" routerLink="/home">
+    <i class="material-icons">shopping_cart</i><span style="vertical-align: top"> Continue Shopping</span>
+  </button>
+</div>
+<ng-template #show>
 <div class="container">
   <table class="table table-hover">
     <thead>
@@ -20,3 +28,4 @@
     </tbody>
   </table>
 </div>
+</ng-template>

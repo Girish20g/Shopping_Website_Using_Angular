@@ -1,12 +1,12 @@
-<div class="container justify-content-center  d-flex">
+<div class="bg-dark">
+<div class="container justify-content-center  d-flex bg-dark">
   <!--<form>
     <input class="p-1 m-0" [(ngModel)]="see" name="any" type="text" placeholder="Search for products,brand or more">
     <button class="p-1 m-1" type="submit" (click)="seename()"><i class = "material-icons"  style="font-size: 2rem;color: black">search</i></button>
   </form>-->
-  <form class="example" style="margin:auto;max-width:300px">
-    <input type="text" [(ngModel)]="see" placeholder="Search BY Name" name="search2">
-    <button type="submit" (click)="seename()"><i class="material-icons">search</i></button>
-  </form>
+    <input type="search" class="mt-1 mb-1 w-50 rounded-lg" [(ngModel)]="see" placeholder="Search BY Name" name="search2">
+    <button class="mt-1 mb-1" type="submit" (click)="seename()"><i class="material-icons">search</i></button>
+</div>
 </div>
 <div class="bg-dark">
   <div class="container">
@@ -28,10 +28,10 @@
       <img src="./assets/image/carousel1.PNG" height="530px" class="w-100" alt="Random first slide">
     </ng-template>
     <ng-template ngbSlide>
-      <img src="./assets/image/carousel2.PNG" height="530px" class="w-100" alt="Random second slide">
+      <img src="./assets/image/carousel3.jpg" height="530px" class="w-100" alt="Random second slide">
     </ng-template>
     <ng-template ngbSlide>
-      <img src="./assets/image/carousel3.PNG" height="530px" class="w-100" alt="Random third slide">
+      <img src="./assets/image/carousel2.jpg" height="530px" class="w-100" alt="Random third slide">
     </ng-template>
   </ngb-carousel>
 </div>
@@ -52,7 +52,12 @@
     </ul>
     <hr>
     <span>BRAND</span>
-    <ul>
+    <ul *ngFor="let p of products">
+      <li>
+        <input type = "radio" value = "{{p.brand}}" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory(p.brand)">{{p.brand}}
+      </li>
+    </ul>
+    <!--<ul>
       <li><input type = "radio" value = "B&O" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('B&O')">
         B&O</li>
       <li><input type = "radio" value = "ADIDAS" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('ADIDAS')">
@@ -63,7 +68,7 @@
         WROGN</li>
       <li><input type = "radio" value = "KOOKABURA" [(ngModel)]="bfilter" name="brand" (click)="showWithBrandAndCategory('KOOKABURA')">
         KOOKABURA</li>
-    </ul>
+    </ul>-->
   </div>
   <div *ngIf="products.length==0" class="d-flex">
     <div><img src="./assets/image/result.PNG"></div>
@@ -72,7 +77,7 @@
   <div class = "col-10 bg-dark mt-1">
     <div class = "row">
       <div class = "col-3" *ngFor="let p of products">
-        <div class= "pro-style rounded-lg pl-2 pt-1 pb-1"(click)="onShow(p)">
+        <div class= "pro-style mb-5 rounded-lg pl-2 pt-1 pb-1"(click)="onShow(p)">
           <img src="{{p.imgsrc}}" height="300px" class="mt-2 zprop">
           <div><b>{{p.brand}}</b></div>
           <div>"{{p.name}}"</div>

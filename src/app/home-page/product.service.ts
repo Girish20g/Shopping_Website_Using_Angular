@@ -44,9 +44,9 @@ export class ProductService {
 
   getWithBrandAndCategory(cat, b) {
     const token = sessionStorage.getItem('token');
-    // const headers = new HttpHeaders({Authorization: 'Basic ' + token});
+    const headers = new HttpHeaders({Authorization: 'Basic ' + token});
     const url = 'http://localhost:2020/api/category/brand/' + cat + '/' + b;
-    return this.http.get(url);
+    return this.http.get(url, {headers});
   }
 
   getByName(name) {

@@ -34,6 +34,10 @@ export const MAIN_ROUTES: Routes = [
     component: ProductDetailsComponent
   },
   {
+    path: 'product',
+    component: ProductDetailsComponent
+  },
+  {
     path: 'orderhistory',
     component: OrderhistoryComponent
   },

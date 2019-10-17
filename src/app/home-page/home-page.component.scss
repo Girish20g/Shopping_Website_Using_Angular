@@ -114,6 +114,11 @@ form.example::after {
   align-items: center;
   margin: 5px;
   box-shadow: 0 0.5rem 1rem 0 yellow;
+  transition: transform .2s;
+}
+.pro-style:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem 0 red;
 }
 img {
   display: block;

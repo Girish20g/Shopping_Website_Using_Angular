@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProductDetailsService} from './product-details.service';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   product_Id;
   // tslint:disable-next-line:variable-name
   product_details = { };
-  constructor(private productDetailsService: ProductDetailsService , private router: Router, private route: ActivatedRoute) { }
+  constructor(private productDetailsService: ProductDetailsService , private router: Router, private route: ActivatedRoute, private service: AppService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -29,6 +30,16 @@ export class ProductDetailsComponent implements OnInit {
       this.product_details = data;
       this.router.navigate(['/cart']);
       console.log(data);
+    });
+  }
+
+  edit(productId: any) {
+    this.service.edit(true);
+    this.router.navigate(['/addproduct'], {
+      relativeTo: this.route,
+      queryParams: {
+        id: productId
+      }
     });
   }
 

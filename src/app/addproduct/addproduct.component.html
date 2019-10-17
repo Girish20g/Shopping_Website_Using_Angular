@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container" *ngIf="!serve.checkEdit(); else elseblock">
   <h1 class="text-warning" style="font-family: 'Comic Sans MS'">ADD PRODUCT</h1>
 </div>
+<ng-template #elseblock>
+  <h1 class="text-warning" style="font-family: 'Comic Sans MS'">Edit Product</h1>
+</ng-template>
 <div class="container border border-dark rounded-lg mt-3">
 
   <form >
@@ -64,7 +67,13 @@
         <div class=" col-md-4 "></div>
         <div class="controls col-md-8 ">
           <input type="submit" routerLink="/home" name="Signup" value="Cancel" class="btn btn-primary btn btn-info" />
-          or <input type="button" (click)="addproduct()" name="Signup" value="Add Product" class="btn btn btn-dark" />
+          or
+          <div *ngIf="!serve.checkEdit(); else elsepart">
+            <input type="button" (click)="addproduct()" name="Signup" value="Add Product" class="btn btn btn-dark" />
+          </div>
+          <ng-template #elsepart>
+            <input type="button" (click)="editP()" name="Signup" value="Save" class="btn btn btn-dark" />
+          </ng-template>
         </div>
 
     </form>

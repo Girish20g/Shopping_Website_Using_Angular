@@ -26,4 +26,10 @@
   cursor: zoom-in;
 }
 
-
+.zprop {
+  transition: transform .5s;
+  margin: 0 auto;
+}
+.zprop:hover {
+  transform: scale(1.5);
+}
