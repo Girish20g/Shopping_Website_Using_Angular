@@ -4,7 +4,7 @@
     <input class="p-1 m-0" [(ngModel)]="see" name="any" type="text" placeholder="Search for products,brand or more">
     <button class="p-1 m-1" type="submit" (click)="seename()"><i class = "material-icons"  style="font-size: 2rem;color: black">search</i></button>
   </form>-->
-    <input type="search" class="mt-1 mb-1 w-50 rounded-lg" [(ngModel)]="see" placeholder="Search BY Name" name="search2">
+    <input type="search" class="mt-1 mb-1 w-50 rounded-lg" [(ngModel)]="see" placeholder="Search BY Name" (keyup)="seename()" name="search2">
     <button class="mt-1 mb-1" type="submit" (click)="seename()"><i class="material-icons">search</i></button>
 </div>
 </div>

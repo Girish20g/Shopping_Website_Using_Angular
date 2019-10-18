@@ -52,6 +52,11 @@ export class SignUpComponent implements OnInit {
         this.x = 1;
         break;
       }
+      if (this.prod[i].phone === ar.phone) {
+        alert('Email Already Exist');
+        this.x = 1;
+        break;
+      }
     }
     if (this.x === 0) {
       this.http.post(this.url, ar).subscribe(data => {

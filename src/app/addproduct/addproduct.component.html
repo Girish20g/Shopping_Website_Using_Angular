@@ -69,10 +69,10 @@
           <input type="submit" routerLink="/home" name="Signup" value="Cancel" class="btn btn-primary btn btn-info" />
           or
           <div *ngIf="!serve.checkEdit(); else elsepart">
-            <input type="button" (click)="addproduct()" name="Signup" value="Add Product" class="btn btn btn-dark" />
+            <input type="button" (click)="addproduct()" name="Signup" value="Add Product" class="btn btn btn-dark mt-2" />
           </div>
           <ng-template #elsepart>
-            <input type="button" (click)="editP()" name="Signup" value="Save" class="btn btn btn-dark" />
+            <input type="button" (click)="editP()" name="Signup" value="Save" class="btn btn btn-dark " />
           </ng-template>
         </div>
 
