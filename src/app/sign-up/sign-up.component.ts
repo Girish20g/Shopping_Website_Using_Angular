@@ -43,7 +43,7 @@ export class SignUpComponent implements OnInit {
     };
     for (let i = 0; i < this.prod.length; i++) {
       if (this.prod[i].username === ar.username) {
-        alert('Username Already Exist');
+        alert('Invalid Please Fill Credentials');
         this.x = 1;
         break;
       }
